@@ -9,7 +9,7 @@
 <body>
   <div id="hello-world-app">
     <h1>{{ greeting[randomIndex] }}</h1>
-    <button v-on:click="randomIndex = Math.floor(Math.random() * greeting.length);">👋</button>
+    <button v-on:click="getIndex()">👋</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
@@ -27,6 +27,11 @@
             "Bonjour le monde!",
             "Witaj świecie!"
             ]
+        }
+      },
+      methods: {
+        getIndex: function(event) {
+          this.randomIndex = Math.floor(Math.random() * this.greeting.length);
         }
       }
     });
