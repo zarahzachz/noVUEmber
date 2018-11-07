@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Rainbow Button in VueJS</title>
-</head>
-<body style="background-color: #000">
-  <div id="rainbow-button-app">
+<template>
+  <div>
     <div v-bind:style="imagePosition">
       <svg v-bind:style="{ fill: fillColor }" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
         <g>
@@ -19,42 +11,46 @@
     </div>
     <button v-bind:style="buttonStyle" v-on:click="changeRgba()">🌈</button>
   </div>
+</template>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-
-  <script>
-    new Vue({
-      el: "#rainbow-button-app",
-      data() {
-        return {
-          fillColor: this.setRgba(),
-          buttonStyle: {
-            padding: '10px 60px',
-            fontSize: '2rem',
-            borderRadius: '6px',
-            margin: 'auto',
-            display: 'block'
-          },
-          imagePosition: {
-            width: '300px',
-            height: 'auto',
-            display: 'block',
-            margin: '10px auto 30px'
-          }
-        }
+<script>
+export default {
+  name: 'RainbowButton',
+  data() {
+    return {
+      fillColor: this.setRgba(),
+      buttonStyle: {
+        padding: '10px 60px',
+        fontSize: '2rem',
+        borderRadius: '6px',
+        margin: 'auto',
+        display: 'block',
       },
-      methods: {
-        setRgba: function() {
-          var o = Math.round,
-          r = Math.random,
-          s = 255;
-          return 'rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ')';
-        },
-        changeRgba: function(event) {
-          this.fillColor = this.setRgba();
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+      imagePosition: {
+        width: '300px',
+        height: 'auto',
+        display: 'block',
+        margin: '10px auto 30px',
+      },
+    };
+  },
+  methods: {
+    setRgba: function () {
+      const o = Math.round;
+      const r = Math.random;
+      const s = 255;
+
+      return 'rgb(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ')';
+    },
+    changeRgba: function () {
+      this.fillColor = this.setRgba();
+    },
+  },
+};
+</script>
+
+<style scoped>
+  body {
+    background-color: #000;
+  }
+</style>

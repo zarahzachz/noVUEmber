@@ -1,9 +1,7 @@
 <template>
-  <div id="app">
-    <div>
-      <p>Welcome to Monty Hall! Choose a door to collect your prize!</p>
-      <p>You have {{ guessCounter }} guesses remaining.</p>
-    </div>
+  <div>
+    <p>Welcome to Monty Hall! Choose a door to collect your prize!</p>
+    <p>You have {{ guessCounter }} guesses remaining.</p>
     <div v-for="(door, index) in doors" v-bind:key="door.id">
       <div v-if="door.opened === true">{{ door.name }} - Opened</div>
       <div href="" v-else v-on:click="openDoor(index)">{{ door.name }} - Closed</div>
@@ -13,9 +11,7 @@
 
 <script>
 export default {
-  name: 'App',
-  components: {
-  },
+  name: 'MontyHallGame',
   data() {
     return {
       guessCounter: 2,
@@ -56,8 +52,9 @@ export default {
       }
     },
   },
-};
+}
 </script>
 
-<style>
+<style scoped>
+
 </style>

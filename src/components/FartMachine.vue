@@ -1,24 +1,25 @@
 <template>
-  <div id="app">
-    <div v-for="(fart, i) in farts" v-bind:key="fart.id">
+  <div>
+    <div v-for="(fart, i) in farts"
+        v-bind:key="fart.id">
       <button v-on:click="play(i)">Pull my finger</button>
       <audio :num="i">
-        <source :src="fart.asset" type="audio/mp3">
+        <!-- <source :src="fart.asset" type="audio/mp3"> -->
+        <source src="../assets/long_fart.mp3" type="audio/mp3">
       </audio>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: 'FartMachine',
   data() {
     return {
       farts: [{
-        asset: '/static/media/long_fart.55ac2ac.mp3',
+        asset: '../assets/long_fart.mp3',
       }, {
-        asset: '/static/media/short_fart.1b46500.mp3',
+        asset: '../assets/short_fart.mp3',
       }],
     };
   },
@@ -29,8 +30,9 @@ export default {
       fart.play();
     },
   },
-};
+}
 </script>
 
-<style>
+<style scoped>
+
 </style>
