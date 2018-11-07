@@ -31,7 +31,7 @@ export default {
     };
   },
   methods: {
-    openDoor: function (index) {
+    openDoor: function openDoor(index) {
       if (this.guessCounter > 0) {
         // if opened = false, change to true
         this.doors[index].opened = true;
@@ -52,7 +52,7 @@ export default {
       }
     },
   },
-}
+};
 </script>
 
 <style scoped>

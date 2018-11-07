@@ -35,14 +35,14 @@ export default {
     };
   },
   methods: {
-    setRgba: function () {
+    setRgba: function setRgba() {
       const o = Math.round;
       const r = Math.random;
       const s = 255;
 
       return 'rgb(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ')';
     },
-    changeRgba: function () {
+    changeRgba: function changeRgba() {
       this.fillColor = this.setRgba();
     },
   },

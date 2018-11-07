@@ -24,13 +24,13 @@ export default {
     };
   },
   methods: {
-    play: function (i) {
+    play: function play(i) {
       const fart = document.body.querySelector(`audio[num="${i}"`);
       fart.currentTime = 0;
       fart.play();
     },
   },
-}
+};
 </script>
 
 <style scoped>

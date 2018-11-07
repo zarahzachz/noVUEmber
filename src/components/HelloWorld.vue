@@ -21,7 +21,7 @@ export default {
     };
   },
   methods: {
-    getGreeting: function () {
+    getGreeting: function getGreeting() {
       this.randomIndex = Math.floor(Math.random() * this.greeting.length);
     },
   },
