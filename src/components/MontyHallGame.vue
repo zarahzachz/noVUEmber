@@ -43,24 +43,24 @@ export default {
         if (this.doors[index].prize === false) {
           if (this.guessCounter >= 1) {
             swal({
-              title: "Choose wisely...",
-              text: "You have " + this.guessCounter + " more guess...",
-              icon: "warning",
+              title: 'Choose wisely...',
+              text: 'You have ' + this.guessCounter + ' more guess...',
+              icon: 'warning',
             });
           } else {
             // if prize = false, play womp womp music
             swal({
-              title: "You lose!",
-              text: "Better luck next time.",
-              icon: "error",
+              title: 'You lose!',
+              text: 'Better luck next time.',
+              icon: 'error',
             });
           }
         } else {
           // if prize = true, show balloons/confetti up page + cheer sounds
           swal({
-            title: "You won!",
-            text: "Aww yiss!",
-            icon: "success",
+            title: 'You won!',
+            text: 'Aww yiss!',
+            icon: 'success',
           });
         }
       }
