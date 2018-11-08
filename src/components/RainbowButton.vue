@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <div v-bind:style="imagePosition">
       <svg v-bind:style="{ fill: fillColor }" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
         <g>
@@ -50,7 +50,8 @@ export default {
 </script>
 
 <style scoped>
-  body {
+  .body {
     background-color: #000;
+    padding: 45px 0;
   }
 </style>
