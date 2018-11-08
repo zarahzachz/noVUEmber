@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
+
 export default {
   name: 'MontyHallGame',
   data() {
@@ -40,14 +42,26 @@ export default {
         // if prize = false, show text saying '1 more attempt'
         if (this.doors[index].prize === false) {
           if (this.guessCounter >= 1) {
-            alert(this.guessCounter + ' more guess...');
+            swal({
+              title: "Choose wisely...",
+              text: "You have " + this.guessCounter + " more guess...",
+              icon: "warning",
+            });
           } else {
             // if prize = false, play womp womp music
-            alert('You lose!');
+            swal({
+              title: "You lose!",
+              text: "Better luck next time.",
+              icon: "error",
+            });
           }
         } else {
           // if prize = true, show balloons/confetti up page + cheer sounds
-          alert('You win!');
+          swal({
+            title: "You won!",
+            text: "Aww yiss!",
+            icon: "success",
+          });
         }
       }
     },
