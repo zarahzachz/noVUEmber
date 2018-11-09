@@ -18,6 +18,9 @@
       <li>
         <router-link to="/fart-machine">Fart Machine</router-link>
       </li>
+      <li>
+        <router-link to="/rolling-ball">Rolling Ball</router-link>
+      </li>
     </ol>
     <router-view/>
   </div>
