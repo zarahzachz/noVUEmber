@@ -17,29 +17,23 @@ export default {
       ballRight: 0,
     };
   },
-  methods: {
-    moveLeft: function moveLeft() {
-      this.ballLeft += 10;
-      if (this.ballRight > 0) {
-        this.ballRight -= 10;
+  created: function moveBall() {
+    document.addEventListener('keydown', (event) => {
+      // Left arrow
+      if (event.keyCode === 37) {
+        this.ballLeft += 10;
+        if (this.ballRight > 0) {
+          this.ballRight -= 10;
+        }
+      // Right arrow
+      } else if (event.keyCode === 39) {
+        this.ballRight += 10;
+        if (this.ballLeft > 0) {
+          this.ballLeft -= 10;
+        }
       }
-    },
-    moveRight: function moveRight() {
-      this.ballRight += 10;
-      if (this.ballLeft > 0) {
-        this.ballLeft -= 10;
-      }
-    },
+    });
   },
-  // mounted() {
-  //   this.$el.addEventListener('left', (e) => this.$emit('left', e))
-  //   this.$el.addEventListener('right', (e) => this.$emit('right', e))
-  // },
-  // beforeDestroy() {
-  // 	this.$el.removeEventListener('left', (e) => this.$emit('left', e))
-  //   this.$el.removeEventListener('right', (e) => this.$emit('right', e))
-  //   this.$el.removeListeners()
-  // },
 };
 </script>
 
