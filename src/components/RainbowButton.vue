@@ -40,7 +40,7 @@ export default {
       const r = Math.random;
       const s = 255;
 
-      return 'rgb(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ')';
+      return `rgb(${o(r() * s)}, ${o(r() * s)}, ${o(r() * s)})`;
     },
     changeRgba: function changeRgba() {
       this.fillColor = this.setRgba();
