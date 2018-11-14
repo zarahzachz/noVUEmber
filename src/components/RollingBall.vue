@@ -2,7 +2,7 @@
   <div tab="1" class="scene">
     <p>Use the left or right arrows on your keyboard to move the ball.</p>
     <div class="ball"
-        v-bind:style="{ right: ballLeft + 'px', left: ballRight + 'px' }">
+        v-bind:style="{ right: ballLeft + 'px', left: ballRight + 'px', transform: 'rotate('+ spin + 'turn)' }">
       BALL
     </div>
   </div>
@@ -15,6 +15,7 @@ export default {
     return {
       ballLeft: 0,
       ballRight: 0,
+      spin: 0,
     };
   },
   created: function moveBall() {
@@ -22,12 +23,14 @@ export default {
       // Left arrow
       if (event.keyCode === 37) {
         this.ballLeft += 10;
+        this.spin -= 0.25;
         if (this.ballRight > 0) {
           this.ballRight -= 10;
         }
       // Right arrow
       } else if (event.keyCode === 39) {
         this.ballRight += 10;
+        this.spin += 0.25;
         if (this.ballLeft > 0) {
           this.ballLeft -= 10;
         }
