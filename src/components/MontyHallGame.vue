@@ -44,7 +44,7 @@ export default {
           if (this.guessCounter >= 1) {
             swal({
               title: 'Choose wisely...',
-              text: 'You have ' + this.guessCounter + ' more guess...',
+              text: `You have ${this.guessCounter} more guess...`,
               icon: 'warning',
             });
           } else {
