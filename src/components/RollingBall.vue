@@ -1,10 +1,10 @@
 <template>
   <div tab="1" class="scene">
     <p>Use the left or right arrows on your keyboard to move the ball.</p>
-    <a href="" class="ball"
-      v-bind:style="{ right: ballLeft + 'px', left: ballRight + 'px' }"
-      v-on:keyup.left="moveLeft()"
-      v-on:keyup.right="moveRight()"></a>
+    <div class="ball"
+        v-bind:style="{ right: ballLeft + 'px', left: ballRight + 'px' }">
+      BALL
+    </div>
   </div>
 </template>
 
@@ -52,8 +52,12 @@ export default {
     background-color: seagreen;
     border: 14px solid salmon;
     border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     height: 100px;
+    transition: all 1s ease 0s;
     width: 100px;
   }
 </style>
